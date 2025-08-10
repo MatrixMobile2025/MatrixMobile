@@ -1,0 +1,147 @@
+/* styles.css - тъмна неонова лилаво/синя тема */
+:root{
+  --bg:#050507;
+  --card:#0b0b0d;
+  --neon1:#9b59ff; /* лилаво */
+  --neon2:#3498ff; /* синьо */
+  --glass: rgba(255,255,255,0.03);
+  --accent-grad: linear-gradient(90deg,var(--neon1),var(--neon2));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#ddd;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* Canvas for Matrix code */
+#matrixCanvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  opacity:0.15;
+}
+
+/* Topbar */
+.topbar{
+  position:relative;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 32px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+.brand h1{
+  margin:0;
+  font-size:22px;
+  letter-spacing:2px;
+  background:var(--accent-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.slogan{margin:0;font-size:12px;color:#9aa0a6}
+
+/* nav */
+.topbar nav a{
+  color:#9aa0a6;
+  margin-left:18px;
+  text-decoration:none;
+}
+.topbar nav a:hover{color:#fff}
+
+/* Hero */
+.hero{
+  min-height:66vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  position:relative;
+}
+.hero-inner{
+  text-align:center;
+  padding:40px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(155,89,255,0.08);
+}
+.hero h2{
+  margin:0 0 8px 0;
+  font-size:36px;
+  letter-spacing:1px;
+  background:var(--accent-grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p{margin:0 0 18px 0;color:#bfc6cc}
+.btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+  background:transparent;
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+.btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:var(--accent-grad);
+  filter:blur(12px);
+  opacity:0.15;
+  transition:opacity .25s, transform .35s;
+}
+.btn:hover::before{opacity:0.28; transform:scale(1.02)}
+
+/* Products */
+.products{padding:40px 6%; z-index:3; position:relative}
+.products h3{margin:0 0 14px 0; font-size:22px; color:#fff}
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.03);
+  transition:transform .25s, box-shadow .25s;
+  position:relative;
+}
+.card:hover{transform:translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+.card img{width:100%; display:block; height:220px; object-fit:cover}
+.card .meta{padding:12px}
+.card .meta h4{margin:0 0 6px 0}
+.card .meta p{margin:0;color:#bfc6cc;font-size:13px}
+
+/* About & Contact */
+.about, .contact{padding:28px 6%; z-index:3}
+footer{padding:18px 6%; color:#8f98a0; z-index:3}
+
+/* small */
+.note{font-size:13px;color:#8f98a0;margin-top:12px}
+code{background:#0b0b0d;padding:2px 6px;border-radius:6px;color:#9aa0a6}
+
+/* responsive */
+@media(max-width:720px){
+  .hero h2{font-size:24px}
+  .topbar{padding:12px 18px}
+}

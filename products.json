@@ -1,0 +1,17 @@
+[
+  {
+    "image": "product1.svg",
+    "title": "Неонов калъф",
+    "description": "Лилаво-неонов дизайн, устойчив на удари"
+  },
+  {
+    "image": "product2.svg",
+    "title": "Бързо зарядно",
+    "description": "USB-C 30W, компактно и надеждно"
+  },
+  {
+    "image": "product3.svg",
+    "title": "Тънки слушалки",
+    "description": "Комфорт и чист звук за всеки телефон"
+  }
+]
